@@ -1,0 +1,561 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f8;
+    color: #172b4d;
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+
+    background-color: #172b4d;
+
+    color: white;
+
+    padding: 20px 30px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+}
+
+
+.navbar h1 {
+
+    font-size: 26px;
+
+    margin-bottom: 5px;
+}
+
+
+.navbar p {
+
+    font-size: 14px;
+
+    opacity: 0.8;
+}
+
+
+#addTaskBtn {
+
+    background-color: white;
+
+    color: #172b4d;
+
+    border: none;
+
+    padding: 11px 18px;
+
+    border-radius: 6px;
+
+    cursor: pointer;
+
+    font-weight: bold;
+
+    font-size: 14px;
+}
+
+
+#addTaskBtn:hover {
+
+    background-color: #e8ebef;
+}
+
+
+/* =========================
+   CONTROLS
+========================= */
+
+.controls {
+
+    background-color: white;
+
+    padding: 20px 30px;
+
+    display: flex;
+
+    gap: 15px;
+
+    border-bottom: 1px solid #ddd;
+}
+
+
+.controls input,
+.controls select {
+
+    padding: 11px;
+
+    border: 1px solid #ccc;
+
+    border-radius: 6px;
+
+    font-size: 14px;
+
+    outline: none;
+}
+
+
+.controls input {
+
+    width: 350px;
+}
+
+
+.controls input:focus,
+.controls select:focus {
+
+    border-color: #172b4d;
+}
+
+
+/* =========================
+   BOARD
+========================= */
+
+.board {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 20px;
+
+    padding: 25px 30px;
+}
+
+
+/* =========================
+   COLUMN
+========================= */
+
+.column {
+
+    background-color: #e9ebef;
+
+    min-height: 550px;
+
+    border-radius: 8px;
+
+    padding: 15px;
+}
+
+
+.column-header {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 15px;
+}
+
+
+.column-header h2 {
+
+    font-size: 18px;
+}
+
+
+.column-header span {
+
+    background-color: #d5d9e0;
+
+    padding: 5px 10px;
+
+    border-radius: 20px;
+
+    font-size: 13px;
+}
+
+
+/* =========================
+   TASK CARD
+========================= */
+
+.task-card {
+
+    background-color: white;
+
+    padding: 16px;
+
+    margin-bottom: 12px;
+
+    border-radius: 8px;
+
+    box-shadow:
+        0 2px 6px rgba(0, 0, 0, 0.08);
+
+    cursor: grab;
+}
+
+
+.task-card:hover {
+
+    box-shadow:
+        0 4px 10px rgba(0, 0, 0, 0.12);
+}
+
+
+.task-card h3 {
+
+    font-size: 17px;
+
+    margin-bottom: 8px;
+}
+
+
+.task-card p {
+
+    font-size: 14px;
+
+    color: #555;
+
+    margin-bottom: 10px;
+}
+
+
+/* USER */
+
+.task-user {
+
+    font-size: 13px;
+
+    margin-bottom: 10px;
+
+    color: #444;
+}
+
+
+/* =========================
+   PRIORITY
+========================= */
+
+.priority {
+
+    display: inline-block;
+
+    padding: 5px 9px;
+
+    border-radius: 5px;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    margin-bottom: 10px;
+}
+
+
+.priority-high {
+
+    background-color: #fee2e2;
+
+    color: #b91c1c;
+}
+
+
+.priority-medium {
+
+    background-color: #fef3c7;
+
+    color: #92400e;
+}
+
+
+.priority-low {
+
+    background-color: #dcfce7;
+
+    color: #166534;
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+.task-actions {
+
+    display: flex;
+
+    gap: 8px;
+
+    margin-top: 10px;
+}
+
+
+.task-actions button {
+
+    border: none;
+
+    padding: 7px 12px;
+
+    border-radius: 5px;
+
+    cursor: pointer;
+}
+
+
+.edit-btn {
+
+    background-color: #dbeafe;
+
+    color: #1d4ed8;
+}
+
+
+.delete-btn {
+
+    background-color: #fee2e2;
+
+    color: #b91c1c;
+}
+
+
+.edit-btn:hover {
+
+    background-color: #bfdbfe;
+}
+
+
+.delete-btn:hover {
+
+    background-color: #fecaca;
+}
+
+
+/* =========================
+   DRAG AND DROP
+========================= */
+
+.dragging {
+
+    opacity: 0.5;
+}
+
+
+.task-list {
+
+    min-height: 450px;
+}
+
+
+/* =========================
+   MODAL
+========================= */
+
+.modal {
+
+    display: none;
+
+    position: fixed;
+
+    top: 0;
+
+    left: 0;
+
+    width: 100%;
+
+    height: 100%;
+
+    background-color:
+        rgba(0, 0, 0, 0.5);
+
+    justify-content: center;
+
+    align-items: center;
+
+    z-index: 1000;
+}
+
+
+.modal-content {
+
+    background-color: white;
+
+    width: 430px;
+
+    padding: 25px;
+
+    border-radius: 10px;
+
+    position: relative;
+}
+
+
+.modal-content h2 {
+
+    margin-bottom: 20px;
+}
+
+
+/* CLOSE */
+
+.close {
+
+    position: absolute;
+
+    right: 20px;
+
+    top: 15px;
+
+    font-size: 25px;
+
+    cursor: pointer;
+
+    color: #555;
+}
+
+
+.close:hover {
+
+    color: black;
+}
+
+
+/* =========================
+   FORM
+========================= */
+
+#taskForm {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+}
+
+
+#taskForm label {
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    margin-top: 5px;
+}
+
+
+#taskForm input,
+#taskForm textarea,
+#taskForm select {
+
+    padding: 10px;
+
+    border: 1px solid #ccc;
+
+    border-radius: 5px;
+
+    font-size: 14px;
+
+    outline: none;
+}
+
+
+#taskForm input:focus,
+#taskForm textarea:focus,
+#taskForm select:focus {
+
+    border-color: #172b4d;
+}
+
+
+#taskForm textarea {
+
+    min-height: 80px;
+
+    resize: vertical;
+}
+
+
+.save-btn {
+
+    margin-top: 12px;
+
+    background-color: #172b4d;
+
+    color: white;
+
+    padding: 11px;
+
+    border: none;
+
+    border-radius: 5px;
+
+    cursor: pointer;
+
+    font-weight: bold;
+}
+
+
+.save-btn:hover {
+
+    background-color: #243b61;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+
+    .board {
+
+        grid-template-columns: 1fr;
+
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .navbar {
+
+        flex-direction: column;
+
+        gap: 15px;
+
+        align-items: flex-start;
+
+    }
+
+
+    .controls {
+
+        flex-direction: column;
+
+    }
+
+
+    .controls input {
+
+        width: 100%;
+
+    }
+
+
+    .modal-content {
+
+        width: 90%;
+
+    }
+
+}

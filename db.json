@@ -1,0 +1,37 @@
+{
+  "tasks": [
+    {
+      "id": "1",
+      "title": "Create Login Page",
+      "description": "Design and implement the login page",
+      "priority": "High",
+      "status": "todo",
+      "user": "Swapnika"
+    },
+    {
+      "id": "3",
+      "title": "Create Dashboard",
+      "description": "Build the main dashboard",
+      "priority": "High",
+      "status": "in-progress",
+      "user": "Priya"
+    },
+    {
+      "id": "4",
+      "title": "Setup JSON Server",
+      "description": "Configure JSON Server",
+      "priority": "High",
+      "status": "completed",
+      "user": "Swapnika"
+    },
+    {
+      "id": "5",
+      "title": "Create HTML",
+      "description": "Create the basic HTML structure",
+      "priority": "Medium",
+      "status": "completed",
+      "user": "Rahul"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
